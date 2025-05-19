@@ -6,7 +6,7 @@
 /*   By: cgordeef <cgordeef@student.42barcelon	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2025/05/09 17:31:34 by cgordeef	       #+#    #+#	      */
-/*   Updated: 2025/05/13 15:34:02 by cgordeef         ###   ########.fr       */
+/*   Updated: 2025/05/19 19:46:12 by cgordeef         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	ptr = (unsigned char *)s;
 	i = 0;
-	while (i < n && ptr[i] != '\0')
+	if (n == 0)
 	{
-		if (ptr[i] == c)
+		return (NULL);
+	}
+	while (i < n)
+	{
+		if (ptr[i] == (unsigned char)c)
 		{
 			return (ptr + i);
 		}
 		i++;
-	}
-	if (ptr[i] == '\0')
-	{
-		return (ptr + i);
 	}
 	return (NULL);
 }
