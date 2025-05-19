@@ -6,7 +6,7 @@
 /*   By: cgordeef <cgordeef@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 14:10:11 by cgordeef          #+#    #+#             */
-/*   Updated: 2025/05/19 16:36:30 by cgordeef         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:02:27 by cgordeef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *str, int character)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == character)
+		if (str[i] == (unsigned char)character)
 		{
 			return ((char *)str + i);
 		}
