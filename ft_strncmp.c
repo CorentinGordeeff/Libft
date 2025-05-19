@@ -6,7 +6,7 @@
 /*   By: cgordeef <cgordeef@student.42barcelon	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2025/05/13 14:57:29 by cgordeef	       #+#    #+#	      */
-/*   Updated: 2025/05/13 15:19:59 by cgordeef         ###   ########.fr       */
+/*   Updated: 2025/05/19 20:16:44 by cgordeef         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		return (0);
 	}
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
 	{
 		if (s1[i] != s2[i])
 		{
@@ -31,18 +31,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (s1[i] - s2[i]);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
-	const char	s1[] = "Hello World";
-	const char	s2[] = "Hello Worldn";
-	size_t	n;
-
-	n = 16;
-	printf("S1: %s\n", s1);
-	printf("S2: %s\n", s2);
-	printf("Strcmp of s1 and s2: %d\n", ft_strncmp(s1, s2, n));
+	printf("Strcmp of s1 and s2: %d\n", ft_strncmp("1234", "1235", 3));
 	return (0);
 }
-*/
+
