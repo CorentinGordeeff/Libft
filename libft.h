@@ -6,7 +6,7 @@
 /*   By: cgordeef <cgordeef@student.42barcelon	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2025/05/07 13:51:17 by cgordeef	       #+#    #+#	      */
-/*   Updated: 2025/05/19 18:54:37 by cgordeef         ###   ########.fr       */
+/*   Updated: 2025/07/02 12:49:17 by cgordeef         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_putchar(int c);
+int		ft_putstr(const char *s);
+int		ft_print_char(int c);
+int		ft_print_str(const char *s);
 int		ft_atoi(const char *nptr);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -50,5 +54,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 #endif
