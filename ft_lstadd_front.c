@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgordeef <cgordeef@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 16:52:29 by cgordeef          #+#    #+#             */
-/*   Updated: 2025/07/22 18:39:30 by cgordeef         ###   ########.fr       */
+/*   Created: 2025/07/22 18:13:14 by cgordeef          #+#    #+#             */
+/*   Updated: 2025/07/22 19:03:00 by cgordeef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-t_list	*ft_lstnew(void *content)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*new_node;
-
-	new_node = malloc(sizeof(t_list));
-	if (new_node == NULL)
+	if (*lst == NULL)
 	{
-		return (NULL);
+		return ;
 	}
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	new->next = *lst;
+	**lst = new;
 }
 /*
 #include <stdio.h>
-int	main(void)
+int     main(void)
 {
-	t_list	*node;	
-	char	string[] = "Hello world";
-	node = ft_lstnew(string);
-	printf("content within new node:%s\n", (char *)node->content);
-	printf("content within new node:%p\n", (t_list *)node->next);
+	t_list**	lst;
+        t_list  *node;
+        ft_lstadd_front(*lst, node);
+        printf("content within new node:%p\n", (t_list *)node->next);
 
-	return (0);
+        return (0);
 }
 */
-
