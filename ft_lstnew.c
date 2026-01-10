@@ -1,42 +1,33 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgordeef <cgordeef@student.42barcelon      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 16:52:29 by cgordeef          #+#    #+#             */
-/*   Updated: 2025/07/22 18:39:30 by cgordeef         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-t_list	*ft_lstnew(void *content)
+t_list  *ft_lstnew(void *content)
 {
-	t_list	*new_node;
+    t_list*      root_node;
 
-	new_node = malloc(sizeof(t_list));
-	if (new_node == NULL)
-	{
-		return (NULL);
-	}
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+    root_node = malloc(sizeof(t_list));
+    if (root_node == NULL)
+    {
+        return (NULL);
+    }
+    root_node->content = content;
+    root_node->next = NULL;
+    return (root_node);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	t_list	*node;	
-	char	string[] = "Hello world";
-	node = ft_lstnew(string);
-	printf("content within new node:%s\n", (char *)node->content);
-	printf("content within new node:%p\n", (t_list *)node->next);
 
-	return (0);
+/*
+int main(void)
+{
+
+typedef struct s_list
+{
+    void*   content;
+    struct s_list*  next;
+}   t_list;
+
+    printf("Value of content:%p", ft_lstnew((void *)42));
+    return(0);
 }
 */
-
